@@ -2168,7 +2168,7 @@ recipe, but which one? You can configure your build to call out the
 kernel recipe you want by using the
 :term:`PREFERRED_PROVIDER`
 variable. As an example, consider the
-`x86-base.inc <https://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta/conf/machine/include/x86-base.inc>`_
+:yocto_git:`x86-base.inc </cgit/cgit.cgi/poky/tree/meta/conf/machine/include/x86-base.inc>`
 include file, which is a machine (i.e.
 :term:`MACHINE`) configuration file.
 This include file is the reason all x86-based machines use the
@@ -4967,7 +4967,7 @@ configuration would be as follows:
    require conf/multilib.conf
    MULTILIBS = "multilib:lib32"
    DEFAULTTUNE_virtclass-multilib-lib32 = "x86"
-   IMAGE_INSTALL_append = "lib32-glib-2.0"
+   IMAGE_INSTALL_append = " lib32-glib-2.0"
 
 This example enables an additional library named
 ``lib32`` alongside the normal target packages. When combining these
