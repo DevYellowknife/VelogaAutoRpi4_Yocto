@@ -53,6 +53,7 @@ IMAGE_INSTALL += "\
     fontconfig \
     iw \
     wpa-supplicant \
+    dhcp-client \
     bluez5 \
     protobuf \
     ${MACHINE_EXTRA_RRECOMMENDS} \
