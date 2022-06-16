@@ -1,0 +1,60 @@
+OpenEmbedded/Yocto BSP Layer for Toradex Modules
+================================================
+
+This layer provides support for ARM based Toradex computer on modules (COM)
+common to all used SoCs for use with OpenEmbedded and/or Yocto.
+It is to be used together with meta-toradex-nxp and/or meta-toradex-tegra
+layers.
+For more information on available Toradex COMs please visit:
+
+https://www.toradex.com/computer-on-modules
+
+Dependencies
+============
+
+This layer depends on:
+
+  URI: git://git.openembedded.org/bitbake
+  branch: 1.44
+  revision: HEAD
+
+  URI: git://git.openembedded.org/openembedded-core
+  layer: meta
+  branch: zeus
+  revision: HEAD
+
+  URI: git://git.toradex.com/meta-toradex-nxp
+  branch: zeus
+  revision: HEAD
+and/or
+  URI: git://git.toradex.com/meta-toradex-tegra
+  branch: zeus
+  revision: HEAD
+
+Patches
+=======
+
+This layer is maintained by Toradex.
+
+When creating a patch of the last commit, use
+
+    git format-patch -s --subject-prefix='meta-toradex-bsp-common][<branch>][PATCH' -1
+
+To send patches, use
+
+    git send-email --to yocto-patches@toradex.com <generated patch>
+
+
+Building
+========
+
+See the README in meta-toradex-demos.
+
+License
+=======
+
+All metadata is MIT licensed unless otherwise stated. Source code and
+binaries included in tree for individual recipes is under the LICENSE
+stated in each recipe (.bb file) unless otherwise stated.
+
+This README document is Copyright (C) 2016-2020 Toradex AG.

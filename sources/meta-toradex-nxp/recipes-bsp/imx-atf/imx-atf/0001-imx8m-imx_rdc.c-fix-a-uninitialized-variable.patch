@@ -1,0 +1,32 @@
+From ef0745861de6fc60ca7c5aec385419d12494f17d Mon Sep 17 00:00:00 2001
+From: Ming Liu <ming.liu@toradex.com>
+Date: Sat, 14 Mar 2020 19:50:08 +0100
+Subject: [PATCH] imx8m: imx_rdc.c: fix a uninitialized variable
+
+This fixes a following error:
+| plat/imx/common/imx8m/imx_rdc.c: In function 'imx_rdc_set_masters':
+| plat/imx/common/imx8m/imx_rdc.c:146:9: error: 'ret' may be used uninitialized in this function [-Werror=maybe-uninitialized]
+
+Upstream-Status: Pending
+
+Signed-off-by: Ming Liu <ming.liu@toradex.com>
+---
+ plat/imx/common/imx8m/imx_rdc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/plat/imx/common/imx8m/imx_rdc.c b/plat/imx/common/imx8m/imx_rdc.c
+index 1a21cd318..b539e0553 100644
+--- a/plat/imx/common/imx8m/imx_rdc.c
++++ b/plat/imx/common/imx8m/imx_rdc.c
+@@ -135,7 +135,7 @@ int imx_rdc_set_mda(struct rdc_mda_conf *p)
+  */
+ int imx_rdc_set_masters(struct rdc_mda_conf *masters_list, uint32_t count)
+ {
+-	int i, ret;
++	int i, ret = 0;
+ 
+ 	for (i = 0; i < count; i++) {
+ 		ret = imx_rdc_set_mda(&masters_list[i]);
+-- 
+2.25.1
+

@@ -1,0 +1,26 @@
+From 4b90e67383d07be1475d1613c426cbb2b317b969 Mon Sep 17 00:00:00 2001
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Date: Sun, 22 Mar 2020 03:44:55 +0100
+Subject: [PATCH] colibri-imx8x: modify device tree name for mainline/upstream
+
+Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+---
+ include/configs/colibri-imx8qxp.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/colibri-imx8qxp.h b/include/configs/colibri-imx8qxp.h
+index 0d40042b8e..26a5991c42 100644
+--- a/include/configs/colibri-imx8qxp.h
++++ b/include/configs/colibri-imx8qxp.h
+@@ -81,7 +81,7 @@
+ 
+ #define CONFIG_SKIP_RESOURCE_CHECING
+ 
+-#define FDT_FILE			"fsl-imx8qxp-colibri-eval-v3.dtb"
++#define FDT_FILE			"imx8qxp-colibri-eval-v3.dtb"
+ 
+ /* Initial environment variables */
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+-- 
+2.25.1
+

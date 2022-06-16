@@ -1,0 +1,30 @@
+From 28192d0f5db9ddcb93d908965f3fdc668f62c099 Mon Sep 17 00:00:00 2001
+From: Philippe Schenker <philippe.schenker@toradex.com>
+Date: Tue, 14 Jul 2020 14:40:41 +0200
+Subject: [PATCH 2/2] Revert "ARM64: dts: colibri-imx8x: remove no-1-8-v from
+ sd-card node"
+
+This reverts commit b4d382b9ea4904bd6bd54d72c5bd417db69d6018.
+---
+ arch/arm64/boot/dts/freescale/fsl-imx8qxp-colibri.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8qxp-colibri.dtsi b/arch/arm64/boot/dts/freescale/fsl-imx8qxp-colibri.dtsi
+index 20ddd1429971d..ed5293f23b523 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-imx8qxp-colibri.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-imx8qxp-colibri.dtsi
+@@ -1283,6 +1283,11 @@
+ 	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
+ 	pinctrl-3 = <&pinctrl_usdhc2_sleep>, <&pinctrl_usdhc2_gpio_sleep>;
+ 	disable-wp;
++	/*
++	 * The PMIC on V1.0A HW generates 1.6V instead of 1.8V which creates
++	 * issues with certain SD cards, disable 1.8V signaling for now.
++	 */
++	no-1-8-v;
+ 	vmmc-supply = <&reg_module_3v3>;
+ };
+ 
+-- 
+2.27.0
+

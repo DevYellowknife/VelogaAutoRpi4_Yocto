@@ -1,0 +1,30 @@
+From 802b65177ed08f96c3238ff6b75ba01fc74e93e0 Mon Sep 17 00:00:00 2001
+From: Philippe Schenker <philippe.schenker@toradex.com>
+Date: Tue, 14 Jul 2020 14:40:13 +0200
+Subject: [PATCH 1/2] Revert "ARM64: dts: apalis-imx8x: remove no-1-8-v from
+ sd-card node"
+
+This reverts commit ad1860a80539f3e8f579bbf74de2f99d88cf320f.
+---
+ arch/arm64/boot/dts/freescale/fsl-imx8qxp-apalis.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8qxp-apalis.dtsi b/arch/arm64/boot/dts/freescale/fsl-imx8qxp-apalis.dtsi
+index 44437acc7359e..f8755500a8389 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-imx8qxp-apalis.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-imx8qxp-apalis.dtsi
+@@ -1218,6 +1218,11 @@
+ &usdhc2 {
+ 	bus-width = <4>;
+ 	cd-gpios = <&gpio4 22 GPIO_ACTIVE_LOW>;
++	/*
++	 * The PMIC on V1.0A HW generates 1.6V instead of 1.8V which creates
++	 * issues with certain SD cards, disable 1.8V signaling for now.
++	 */
++	no-1-8-v;
+ 	disable-wp;
+ 	pinctrl-names = "default", "state_100mhz", "state_200mhz", "sleep";
+ 	pinctrl-0 = <&pinctrl_usdhc2>, <&pinctrl_usdhc2_gpio>;
+-- 
+2.27.0
+
