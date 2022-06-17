@@ -12,6 +12,7 @@ IMAGE_INSTALL += "\
 IMAGE_INSTALL_remove = "\
 "
 
+TOOLCHAIN_HOST_TASK_append += " nativesdk-protobuf-dev "
 
 set_board_env(){
     mkdir -p ${IMAGE_ROOTFS}/etc/profile.d
