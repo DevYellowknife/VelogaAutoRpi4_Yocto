@@ -1,58 +1,46 @@
+inherit cmake_qt5
+
 SUMMARY = "yellowknife changable skin cluster(VelogaAuto)"
 LICENSE = "CLOSED"
 
-inherit cmake_qt5
-
-DEPENDS = "qtbase qtserialport qtdeclarative dbus qtconnectivity"
+DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity"
 
 SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAuto.git;protocol=ssh;branch=master \
            file://VelogaAuto.service \
 "
 
-SRCREV = "${AUTOREV}"
+# SRCREV = "${AUTOREV}"
+SRCREV = "ccad7eab27b4dcf17bd277261cc335318e3fa8c7"
 PV = "1.0+git${SRCPV}"
 
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/git/target"
 
-PACKAGES += "${PN}-mkspecs"
-
-FILES_${PN}-mkspecs = "\
-    ${OE_QMAKE_PATH_QT_ARCHDATA}/mkspecs \
-"
-
-FILES_${PN}-dev += " \
-    ${OE_QMAKE_PATH_LIBS}/lib*${SOLIBSDEV} \
-    ${OE_QMAKE_PATH_LIBS}/pkgconfig \
-    ${OE_QMAKE_PATH_LIBS}/cmake/* \
-    ${OE_QMAKE_PATH_LIBS}/*.prl \
-    ${OE_QMAKE_PATH_LIBS}/*.la \
-    ${OE_QMAKE_PATH_DATA}/* \
-    ${OE_QMAKE_PATH_HEADERS}/* \
-"
-
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
 do_patch() {
-    rm -rf ${S}/CANDB
-    rm -rf ${S}/temp
-    rm -rf ${S}/veloga_auto_app
-    rm -rf ${S}/target/build
-    mkdir ${S}/target/build
-    cd ${S}/target/build
-    cmake ..
-}
-
-do_compile() {
-    cd ${S}/target
-    make
+    rm -rf ${S}/../CANDB
+    rm -rf ${S}/../temp
+    rm -rf ${S}/../veloga_auto_app
 }
 
 do_install() {
-
+    install -d ${D}//velogaauto
+    install -m 755 ${B}/apps/cluster/cluster ${D}/velogaauto/cluster
+    install -m 744 ${B}/framework/api/appservice/libvappservice.a ${D}/velogaauto/libvappservice.a
+    install -m 744 ${B}/framework/api/connectionservice/libvconnectionservice.a ${D}/velogaauto/libvconnectionservice.a
+    install -m 744 ${B}/framework/api/vehicleservice/libvvehicleservice.a ${D}/velogaauto/libvvehicleservice.a
+    install -m 755 ${B}/framework/services/appmanager/appservice ${D}/velogaauto/appservice
+    install -m 755 ${B}/framework/services/canservice/canservice ${D}/velogaauto/canservice
+    install -m 755 ${B}/framework/services/connmanager/connectionservice ${D}/velogaauto/connectionservice
+    install -m 755 ${B}/framework/services/networkservice/networkservice ${D}/velogaauto/networkservice
+    install -m 755 ${B}/framework/services/winmanager/winmanager ${D}/velogaauto/winmanager
 }
 
-FILES_${PN} += "/opt"
+FILES_${PN} += " /velogaauto/*"
 
-SYSTEMD_SERVICE_${PN} = "VelogaAuto.service"
+FILES_${PN}-staticdev += " /velogaauto/*.a"
+FILES_${PN}-dev += " /velogaauto/*.la"
 
-inherit systemd
+
+#SYSTEMD_SERVICE_${PN} = "VelogaAuto.service"
+
+#inherit systemd

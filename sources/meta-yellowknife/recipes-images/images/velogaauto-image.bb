@@ -8,6 +8,7 @@ inherit features_check populate_sdk_qt5
 IMAGE_INSTALL += "\
     cinematicexperience \
     protobuf \
+    velogaauto \
 "
 IMAGE_INSTALL_remove = "\
 "
