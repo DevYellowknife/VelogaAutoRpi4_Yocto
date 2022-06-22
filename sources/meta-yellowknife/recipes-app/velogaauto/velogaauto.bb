@@ -24,15 +24,15 @@ do_patch() {
 
 do_install() {
     install -d ${D}//velogaauto
-    install -m 755 ${B}/apps/cluster/cluster ${D}/velogaauto/cluster
+    install -m 755 ${B}/apps/velogacluster/veloga-cluster ${D}/velogaauto/veloga-cluster
     install -m 744 ${B}/framework/api/appservice/libvappservice.a ${D}/velogaauto/libvappservice.a
-    install -m 744 ${B}/framework/api/connectionservice/libvconnectionservice.a ${D}/velogaauto/libvconnectionservice.a
-    install -m 744 ${B}/framework/api/vehicleservice/libvvehicleservice.a ${D}/velogaauto/libvvehicleservice.a
-    install -m 755 ${B}/framework/services/appmanager/appservice ${D}/velogaauto/appservice
+    install -m 744 ${B}/framework/api/bleservice/libvbleservice.a ${D}/velogaauto/libvbleservice.a
+    install -m 744 ${B}/framework/api/canservice/libvvehicleservice.a ${D}/velogaauto/libvvehicleservice.a
+    install -m 755 ${B}/framework/services/bleservice/bleservice ${D}/velogaauto/bleservice
     install -m 755 ${B}/framework/services/canservice/canservice ${D}/velogaauto/canservice
-    install -m 755 ${B}/framework/services/connmanager/connectionservice ${D}/velogaauto/connectionservice
-    install -m 755 ${B}/framework/services/networkservice/networkservice ${D}/velogaauto/networkservice
-    install -m 755 ${B}/framework/services/winmanager/winmanager ${D}/velogaauto/winmanager
+    install -m 755 ${B}/framework/services/velogaservice/velogaservice ${D}/velogaauto/velogaservice
+    install -m 755 ${B}/framework/services/wifiservice/wifiservice ${D}/velogaauto/wifiservice
+#    install -m 755 ${B}/framework/services/windowservice ${D}/velogaauto/windowservice
 }
 
 FILES_${PN} += " /velogaauto/*"
