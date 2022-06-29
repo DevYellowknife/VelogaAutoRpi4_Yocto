@@ -27,7 +27,7 @@ do_install() {
     install -m 755 ${B}/apps/velogacluster/veloga-cluster ${D}/velogaauto/veloga-cluster
     install -m 744 ${B}/framework/api/appservice/libvappservice.a ${D}/velogaauto/libvappservice.a
     install -m 744 ${B}/framework/api/bleservice/libvbleservice.a ${D}/velogaauto/libvbleservice.a
-    install -m 744 ${B}/framework/api/canservice/libvvehicleservice.a ${D}/velogaauto/libvvehicleservice.a
+    install -m 744 ${B}/framework/api/canservice/libvcanservice.a ${D}/velogaauto/libvcanservice.a
     install -m 755 ${B}/framework/services/bleservice/bleservice ${D}/velogaauto/bleservice
     install -m 755 ${B}/framework/services/canservice/canservice ${D}/velogaauto/canservice
     install -m 755 ${B}/framework/services/velogaservice/velogaservice ${D}/velogaauto/velogaservice
