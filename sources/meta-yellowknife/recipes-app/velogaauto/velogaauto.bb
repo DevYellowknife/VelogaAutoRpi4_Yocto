@@ -6,7 +6,7 @@ LICENSE = "CLOSED"
 DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity protobuf-native protobuf qtwebsockets"
 
 SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAuto.git;protocol=ssh;branch=master \
-           file://VelogaAuto.service \
+           file://velogaauto.service \
 "
 
 SRCREV = "${AUTOREV}"
@@ -33,6 +33,9 @@ do_install() {
     install -m 755 ${B}/framework/services/velogaservice/velogaservice ${D}/velogaauto/velogaservice
     install -m 755 ${B}/framework/services/wifiservice/wifiservice ${D}/velogaauto/wifiservice
 #    install -m 755 ${B}/framework/services/windowservice ${D}/velogaauto/windowservice
+
+    install -m 0755 -d ${D}${systemd_unitdir}/system
+    install -m 0644 ${WORKDIR}/velogaauto.service ${D}${systemd_unitdir}/system/
 }
 
 FILES_${PN} += " /velogaauto/*"
@@ -41,6 +44,6 @@ FILES_${PN}-staticdev += " /velogaauto/*.a"
 FILES_${PN}-dev += " /velogaauto/*.la"
 
 
-#SYSTEMD_SERVICE_${PN} = "VelogaAuto.service"
+SYSTEMD_SERVICE_${PN} = "velogaauto.service"
 
-#inherit systemd
+inherit systemd

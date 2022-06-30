@@ -1,0 +1,12 @@
+[Unit]
+Description=Veloga Auto Cluster Service
+After=dbus-session.service
+
+[Service]
+ExecStart=-/velogaauto/velogaservice
+WorkingDirectory=/velogaauto
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
