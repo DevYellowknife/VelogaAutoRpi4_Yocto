@@ -3,7 +3,7 @@ inherit cmake_qt5
 SUMMARY = "yellowknife changable skin cluster(VelogaAuto)"
 LICENSE = "CLOSED"
 
-DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity protobuf-native protobuf "
+DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity protobuf-native protobuf qtwebsockets"
 
 SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAuto.git;protocol=ssh;branch=master \
            file://VelogaAuto.service \
