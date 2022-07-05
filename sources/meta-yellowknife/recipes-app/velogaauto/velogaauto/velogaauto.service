@@ -1,6 +1,7 @@
 [Unit]
 Description=Veloga Auto Cluster Service
-After=dbus-session.service bluetooth.service
+After=dbus.service bluetooth.service
+Wants=bluetooth.service
 
 [Service]
 ExecStart=-/velogaauto/velogaservice
