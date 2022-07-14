@@ -4,6 +4,7 @@ After=dbus.service bluetooth.service
 Wants=bluetooth.service
 
 [Service]
+Environment=DLT_INITIAL_LOG_LEVEL="::6"
 ExecStart=-/velogaauto/velogaservice
 WorkingDirectory=/velogaauto
 Restart=always
