@@ -9,6 +9,7 @@ IMAGE_INSTALL += "\
     cinematicexperience \
     protobuf \
     velogaauto \
+    velogaauto-updater \
     openssl-bin \
 "
 IMAGE_INSTALL_remove = "\
