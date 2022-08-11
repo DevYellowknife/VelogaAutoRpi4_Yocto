@@ -6,6 +6,7 @@ Wants=bluetooth.service
 [Service]
 Environment=DLT_INITIAL_LOG_LEVEL="::6"
 ExecStart=-/velogaauto/velogaservice
+KillMode=process
 WorkingDirectory=/velogaauto
 Restart=always
 RestartSec=3
