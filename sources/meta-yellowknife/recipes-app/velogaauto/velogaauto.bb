@@ -7,6 +7,7 @@ DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity protobuf-nati
 
 SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAuto.git;protocol=ssh;branch=master \
            file://velogaauto.service \
+           file://dlt-daemon \
 "
 
 SRCREV = "${AUTOREV}"
@@ -31,6 +32,7 @@ do_install() {
     install -m 755 ${B}/framework/services/velogaservice/velogaservice ${D}/velogaauto/velogaservice
     install -m 755 ${B}/framework/services/wifiservice/wifiservice ${D}/velogaauto/wifiservice
 
+    install -m 755 ${WORKDIR}/dlt-daemon ${D}/velogaauto/
 
     cp -r ${B}/framework/services/velogaservice/process_json ${D}/velogaauto/process_json
     cp -r ${S}/apps/velogacluster/skins ${D}/velogaauto/skins
