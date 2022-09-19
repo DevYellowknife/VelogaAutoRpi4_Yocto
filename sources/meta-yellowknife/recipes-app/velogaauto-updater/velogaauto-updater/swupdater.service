@@ -4,7 +4,7 @@ After=dbus.service
 
 [Service]
 Environment=DLT_INITIAL_LOG_LEVEL="::6"
-ExecStart=-/opt/velogaauto/updateservice
+ExecStart=-/opt/velogaauto/updateservice -d 1
 WorkingDirectory=/opt/velogaauto
 Restart=always
 RestartSec=1
