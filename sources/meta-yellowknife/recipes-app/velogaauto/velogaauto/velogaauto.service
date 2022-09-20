@@ -1,6 +1,6 @@
 [Unit]
 Description=Veloga Auto Cluster Service
-After=dbus.service bluetooth.service
+After=dbus.service bluetooth.service dlt.service
 Wants=bluetooth.service
 
 [Service]

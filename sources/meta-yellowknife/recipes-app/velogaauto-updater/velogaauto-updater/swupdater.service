@@ -1,6 +1,6 @@
 [Unit]
 Description=Veloga Auto Cluster Updater Service
-After=dbus.service
+After=dbus.service dlt.service
 
 [Service]
 Environment=DLT_INITIAL_LOG_LEVEL="::6"

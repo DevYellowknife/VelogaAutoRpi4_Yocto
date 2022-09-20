@@ -8,6 +8,7 @@ inherit features_check populate_sdk_qt5
 IMAGE_INSTALL += "\
     cinematicexperience \
     protobuf \
+    dlt \
     velogaauto \
     velogaauto-updater \
     openssl-bin \
