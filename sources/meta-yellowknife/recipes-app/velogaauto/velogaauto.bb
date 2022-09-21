@@ -32,7 +32,6 @@ do_install() {
     install -m 755 ${B}/framework/services/wifiservice/wifiservice ${D}/velogaauto/wifiservice
 
     cp -r ${B}/framework/services/velogaservice/process_json ${D}/velogaauto/process_json
-    cp -r ${S}/apps/velogacluster/skins ${D}/velogaauto/skins
 
     install -m 0755 -d ${D}${systemd_unitdir}/system
     install -m 0644 ${WORKDIR}/velogaauto.service ${D}${systemd_unitdir}/system/
