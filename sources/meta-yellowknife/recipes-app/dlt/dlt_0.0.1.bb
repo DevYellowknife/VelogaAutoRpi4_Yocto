@@ -4,6 +4,7 @@ LICENSE = "CLOSED"
 SRC_URI = " \
     file://dlt.service \
     file://dlt-daemon \
+    file://dlt-receive \
 "
 
 S = "${WORKDIR}"
@@ -12,6 +13,7 @@ do_install() {
     install -d ${D}//velogaauto
 
     install -m 755 ${WORKDIR}/dlt-daemon ${D}/velogaauto/
+    install -m 755 ${WORKDIR}/dlt-receive ${D}/velogaauto/
 
     install -m 0755 -d ${D}${systemd_unitdir}/system
     install -m 0644 ${WORKDIR}/dlt.service ${D}${systemd_unitdir}/system/
