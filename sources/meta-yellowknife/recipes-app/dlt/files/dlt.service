@@ -3,10 +3,11 @@ Description=COVESA DLT Service
 After=dbus.service
 
 [Service]
-Environment=DLT_INITIAL_LOG_LEVEL="::6"
-ExecStart=-/velogaauto/dlt-daemon
-WorkingDirectory=/velogaauto
-Restart=always
+Type=simple
+ExecStart=-/velogaauto/dlt-start
+Restart=on-failure
+RestartSec=3
+
 
 [Install]
 WantedBy=multi-user.target

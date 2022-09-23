@@ -1,0 +1,6 @@
+#!/bin/sh
+# Copyright (C) 2022 yellowknife.inc Corporation.
+
+/velogaauto/dlt-daemon -d
+
+/velogaauto/dlt-receive -o /tmp/log.dlt -c 10M localhost
