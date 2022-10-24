@@ -5,20 +5,14 @@ LICENSE = "CLOSED"
 
 DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity protobuf-native protobuf qtwebsockets"
 
-SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAuto.git;protocol=ssh;branch=master \
+SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAutoT.git;protocol=ssh;branch=main \
           file://swupdater.service \
 "
 
 SRCREV = "${AUTOREV}"
 
-S = "${WORKDIR}/git/target"
+S = "${WORKDIR}/git"
 
-
-do_patch() {
-    rm -rf ${S}/../CANDB
-    rm -rf ${S}/../temp
-    rm -rf ${S}/../veloga_auto_app
-}
 
 do_install() {
 
