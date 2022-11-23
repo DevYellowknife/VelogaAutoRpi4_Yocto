@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity protobuf-native protobuf qtwebsockets"
 
-SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAutoT.git;protocol=ssh;branch=main \
+SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAutoT.git;protocol=ssh;branch=INNO \
           file://swupdater.service \
 "
 

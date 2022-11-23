@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 DEPENDS += " qtbase qtserialport qtdeclarative dbus qtconnectivity protobuf-native protobuf qtwebsockets"
 
-SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAutoT.git;protocol=ssh;branch=main \
+SRC_URI = "git://git@github.com:/DevYellowknife/VelogaAutoT.git;protocol=ssh;branch=INNO \
            file://velogaauto.service \
 "
 
@@ -21,7 +21,7 @@ do_install() {
 
     install -m 755 ${B}/apps/velogacluster/veloga-cluster ${D}/velogaauto/veloga-cluster
     install -m 755 ${B}/framework/services/bleservice/bleservice ${D}/velogaauto/bleservice
-    install -m 755 ${B}/framework/services/canservice_rasp4/canservice ${D}/velogaauto/canservice
+    install -m 755 ${B}/framework/services/canservice_inno/canservice ${D}/velogaauto/canservice
     install -m 755 ${B}/framework/services/velogaservice/velogaservice ${D}/velogaauto/velogaservice
     install -m 755 ${B}/framework/services/wifiservice/wifiservice ${D}/velogaauto/wifiservice
 
