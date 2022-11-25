@@ -13,6 +13,7 @@ SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
+TARGET_CFLAGS += "-DINNO_WQ"
 
 do_install() {
 

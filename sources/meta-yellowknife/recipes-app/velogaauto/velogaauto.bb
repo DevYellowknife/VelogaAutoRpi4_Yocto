@@ -15,6 +15,7 @@ PV = "1.0+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
+TARGET_CFLAGS += "-DINNO_WQ"
 
 do_install() {
     install -d ${D}//velogaauto
