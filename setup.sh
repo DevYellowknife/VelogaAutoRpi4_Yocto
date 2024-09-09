@@ -3,7 +3,7 @@
 
 git clone -b kirkstone git://git.yoctoproject.org/poky.git
 
-cd poky 
+cd poky
 
 git clone -b kirkstone git://git.openembedded.org/meta-openembedded
 git clone -b kirkstone https://github.com/meta-qt5/meta-qt5
@@ -12,4 +12,4 @@ git clone -b 2024_HMISDV git@github.com:DevYellowknife/meta-yellowknife.git
 
 source oe-init-build-env ../build
 
-export MACHINE=raspberrypi4
+export MACHINE=raspberrypi4-64
